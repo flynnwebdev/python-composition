@@ -17,6 +17,14 @@ class Currency:
   def add_currency(self, currency):
     self.add(currency.gold, currency.silver, currency.copper)
 
+  # Developer-friendly representation
+  # def __repr__(self):
+  #   return f'Currency(gold={self.gold}, silver={self.silver}, copper={self.copper}))'
+
+  # End-user readable representation of the object
+  def __str__(self):
+    return f'{self.gold}G {self.silver}S {self.copper}C'
+
 
 class Character:
   def __init__(self, name, race):
