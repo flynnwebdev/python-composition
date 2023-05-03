@@ -12,9 +12,9 @@
 
 import rpg
 
-aragorn = rpg.Character('Aragorn', 'Human')
-galadriel = rpg.Character('Galadriel', 'Elf')
-frodo = rpg.Character('Frodo', 'Hobbit')
+aragorn = rpg.Character('Aragorn', 'Human', 100, 50)
+galadriel = rpg.Mage('Galadriel', 'Elf', 120, 75, 200)
+frodo = rpg.Burglar('Frodo', 'Hobbit', 50, 25)
 
 galadriel.wallet.set(10, 5, 2)
 # # galadriel.gold = 10
@@ -28,3 +28,7 @@ chest.loot(galadriel)
 print(galadriel.__dict__)
 print(galadriel.wallet)
 print(chest.cash.__dict__)
+
+galadriel.battle(frodo)
+frodo.battle(aragorn)
+galadriel.portal('Minas Tirith') # The beacons are lit!
