@@ -16,7 +16,9 @@ aragorn = rpg.Character('Aragorn', 'Human', 100, 50)
 galadriel = rpg.Mage('Galadriel', 'Elf', 120, 75, 200)
 frodo = rpg.Burglar('Frodo', 'Hobbit', 50, 25)
 
-galadriel.wallet.set(10, 5, 2)
+galadriel.wallet.value = 10, 5, 2
+aragorn.wallet.value = 20, 50, 80
+frodo.wallet.value = 5, 25, 20
 # # galadriel.gold = 10
 # # galadriel.silver = 5
 # # galadriel.copper = 2
@@ -32,3 +34,15 @@ print(chest.cash.__dict__)
 galadriel.battle(frodo)
 frodo.battle(aragorn)
 galadriel.portal('Minas Tirith') # The beacons are lit!
+
+
+# del galadriel.wallet.gold
+# galadriel.wallet.add(10, 5, 1)
+# galadriel.wallet.__gold = 'Hello'
+# _, y, _ = galadriel.wallet.value
+# print(y)
+# galadriel.show_gold()
+
+aragorn.wallet += 42
+print(aragorn.wallet)
+print(frodo.wallet)
